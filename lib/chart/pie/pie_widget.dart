@@ -9,6 +9,8 @@ class PieChart extends StatelessWidget {
     this.textColor = Colors.blueGrey,
     this.textScaleFactor = 1.0,
     this.strokeWidth = 10,
+    this.bgColor = Colors.white,
+    this.fillColor = Colors.green,
   }) : assert(percentage != null);
 
   final Size size;
@@ -16,6 +18,8 @@ class PieChart extends StatelessWidget {
   final Color textColor;
   final double textScaleFactor;
   final double strokeWidth;
+  final Color bgColor;
+  final Color fillColor;
 
   @override
   Widget build(BuildContext context) {
@@ -23,13 +27,14 @@ class PieChart extends StatelessWidget {
       child: new CustomPaint(
         size: size,
         painter: new PieChartPainter(
-           percentage: this.percentage,
-           textColor: this.textColor,
-           textScaleFactor: this.textScaleFactor,
-           strokeWidth: this.strokeWidth,
+          percentage: this.percentage,
+          textColor: this.textColor,
+          textScaleFactor: this.textScaleFactor,
+          strokeWidth: this.strokeWidth,
+          bgColor: this.bgColor,
+          fillColor: this.fillColor,
         ),
       ), // CustomPaint
     ); // LimitedBox
   }
 }
-
